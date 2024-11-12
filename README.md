@@ -17,8 +17,8 @@ Ce projet consiste à développer une application web de prédiction du Nutri-Sc
 1. Clonez ce repository :
 
     ```bash
-    git clone https://github.com/ArthurRoyer/OpenFoofFacts_Analysis.git
-    cd OpenFoofFacts_Analysis
+    git clone https://github.com/seb54/docker_nutriscore.git
+    cd docker_nutriscore
     ```
 
 2. Installation avec Docker
