@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  webapp:
+    build: 
+      context: .
+      dockerfile: Dockerfile.webapp
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=run.py
+      - MODEL_SERVICE_URL=http://modelservice:5001
+    depends_on:
+      - modelservice
+    networks:
+      - nutriscore-net
+
+  modelservice:
+    build:
+      context: .
+      dockerfile: Dockerfile.model
+    ports:
+      - "5001:5001"
+    networks:
+      - nutriscore-net
+
+networks:
+  nutriscore-net:
+    driver: bridge

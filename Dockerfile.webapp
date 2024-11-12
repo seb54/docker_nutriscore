@@ -1,0 +1,14 @@
+FROM python:3.13.0-slim
+
+WORKDIR /app
+
+# Copier l'application
+COPY app/ app/
+COPY run.py .
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
+
+EXPOSE 5000
+
+CMD ["python", "run.py"]
